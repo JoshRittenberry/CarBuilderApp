@@ -69,7 +69,20 @@ button[name="orderButton"] {
     transition: background-color 0.3s;
 }
 
-button[name="orderButton"]:hover {
+button[name="orderButton"] {
+    display: block;
+    width: 25%;
+    padding: 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[name="orderButton"]:hover,
+button[name="completeButton"]:hover {
     background-color: #2980b9;
 }
 

@@ -47,3 +47,19 @@ export const saveOrder = async () => {
     const newOrder = new CustomEvent("newOrderCreated")
     document.dispatchEvent(newOrder)
 }
+
+export const completeOrder = async (id) => {
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    }
+
+    console.log(id)
+
+    const orders = await fetch(`https://localhost:7085/orders/${id}/complete`, postOptions)
+
+    const orderUpdated = new CustomEvent("orderUpdated")
+    document.dispatchEvent(orderUpdated)
+}
