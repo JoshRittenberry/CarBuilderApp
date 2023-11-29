@@ -1,0 +1,37 @@
+Table paint {
+  id integer [primary key]
+  name varchar
+  price int
+}
+
+Table interior {
+  id integer [primary key]
+  name varchar
+  price int
+}
+
+Table technologyPackage {
+  id integer [primary key]
+  name varchar
+  price int
+}
+
+Table wheels {
+  id integer [primary key]
+  name varchar
+  price int
+}
+
+Table orders {
+  id integer [primary key]
+  paintId int
+  interiorId int
+  technologyId int
+  wheelsId int
+  total int
+}
+
+Ref: "paint"."id" < "orders"."paintId"
+Ref: "interior"."id" < "orders"."interiorId"
+Ref: "wheels"."id" < "orders"."wheelsId"
+Ref: "technologyPackage"."id" < "orders"."technologyId"
