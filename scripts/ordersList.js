@@ -1,9 +1,9 @@
-import { completeOrder } from "./TransientState"
+import { completeOrder } from "./TransientState.js"
 
 const copmleteOrderButton = (clickEvent) => {
     if (clickEvent.target.name == "completeButton") {
-        console.log("Order", clickEvent.target.value, "Completed")
-        completeOrder(clickEvent.target.value)
+        console.log("Order", clickEvent.target.id, "Completed")
+        completeOrder(parseInt(clickEvent.target.id))
     }
 }
 
@@ -23,7 +23,7 @@ export const getOrders = async () => {
             return `
             <div>
                 <p>A customer ordered a ${order.paint.color} ${order.vehicle.type} with ${order.wheel.style} wheels, ${order.interior.material} interior, and the ${order.technology.package} for a total cost of $${order.totalCost}</p>
-                <button type="button" name="completeButton" value="${order.id}">Complete Order</button>
+                <input type="button" name="completeButton" id="${order.id}" value="Complete"/>
             </div>
             `
         }
